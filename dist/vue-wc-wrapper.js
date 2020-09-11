@@ -256,7 +256,7 @@ function wrap (Vue, Component, options = {}) {
         wrapper.$mount();
         // render element to DOM
         if (useShadowDOM) this.shadowRoot.appendChild(wrapper.$el);
-        else this.appendChild(wrapper.$el);
+        else this.replaceWith(wrapper.$el);
       } else {
         callHooks(this.vueComponent, 'activated');
       }
